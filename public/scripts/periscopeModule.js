@@ -815,7 +815,7 @@ angular.module('periscope', [])
       $scope.font           = FONTS[0];
       $scope.fontSizes      = FONT_SIZES;
       $scope.fontSize       = FONT_SIZES[0];
-      $scope.corsServer     = false;
+      $scope.corsServer     = true;
       $scope.savedImages    = [];
       $scope.images         = [];
       $scope.periscope = function() {
@@ -971,7 +971,7 @@ angular.module('periscope', [])
         //$http.post('/periscope', json)
         .success(function(data) {
           $scope.buttonText = 'Peri$scope';
-          data = data.replace(/\s/, '');
+          data = periscopeServerUrl + data.replace(/\s/, '');
           $log.debug('image file:',data);
           $scope.images.push(data);
         })

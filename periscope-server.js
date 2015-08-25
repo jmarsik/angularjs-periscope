@@ -11,6 +11,7 @@ app.all('/*', function(req, res, next) {
   next();
 });
 app.use('/', periscopeRoutes);
+app.use(express.static('public'));
 var server = app.listen(SERVER_PORT, function() {
   console.log('Peri$scope CORS-enabled server listening on port %d', server.address().port);
 });
